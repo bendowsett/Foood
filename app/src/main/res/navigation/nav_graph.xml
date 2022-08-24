@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cuisines">
+    <fragment
+        android:id="@+id/cuisines"
+        android:name="com.example.foood.SearchRecipes"
+        android:label="fragment_cuisines"
+        tools:layout="@layout/fragment_search_recipes" >
+        <action
+            android:id="@+id/action_cuisines_to_recipeResultsFragment"
+            app:destination="@id/recipeResultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeResultsFragment"
+        android:name="com.example.foood.RecipeResultsFragment"
+        android:label="fragment_recipe_results"
+        tools:layout="@layout/fragment_recipe_results" />
+</navigation>
