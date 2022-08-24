@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.foood.databinding.FragmentSearchRecipesBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,7 +21,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class SearchRecipes : Fragment() {
     lateinit var binding : FragmentSearchRecipesBinding
-    lateinit var viewModel: SearchRecipesViewModel
+
+    private val sharedViewModel: RecipesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,11 +30,12 @@ class SearchRecipes : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSearchRecipesBinding.inflate(inflater, container, false)
-        viewModel = SearchRecipesViewModel()
+
 
         binding.searchRecipeButton.setOnClickListener {
             val ingredient = binding.searchField.text.toString()
-            viewModel.getRecipesDetails(ingredient)
+            sharedViewModel.getRecipesDetails(ingredient)
+            findNavController().navigate(R.id.action_cuisines_to_recipeResultsFragment)
         }
 
         return binding.root
