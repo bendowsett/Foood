@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.foood.network.Recipes
+import kotlin.coroutines.coroutineContext
 
 class RecipeResultAdapter(private val dataset: List<Recipes>?) : RecyclerView.Adapter<RecipeResultAdapter.ItemViewHolder>(){
 
