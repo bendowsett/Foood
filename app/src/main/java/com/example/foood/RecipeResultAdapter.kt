@@ -1,18 +1,22 @@
 package com.example.foood
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.foood.network.Recipes
 
 class RecipeResultAdapter(private val dataset: List<Recipes>?) : RecyclerView.Adapter<RecipeResultAdapter.ItemViewHolder>(){
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         var textView: TextView = view.findViewById(R.id.item_title)
-        //var imageView: ImageView = view.findViewById(R.id.recipeImage)
+        var imageView: ImageView = view.findViewById(R.id.recipeImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -26,6 +30,7 @@ class RecipeResultAdapter(private val dataset: List<Recipes>?) : RecyclerView.Ad
         val recipe = dataset!![position]
         holder.textView.text = recipe.title
         //holder.imageView.set
+        holder.imageView.load(recipe.image)
     }
 
     override fun getItemCount(): Int {
