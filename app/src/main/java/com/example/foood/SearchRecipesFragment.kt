@@ -38,6 +38,7 @@ class SearchRecipes : Fragment() {
             findNavController().navigate(R.id.action_cuisines_to_recipeResultsFragment)
         }
 
+
         return binding.root
     }
 

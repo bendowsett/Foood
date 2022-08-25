@@ -7,8 +7,8 @@
     <fragment
         android:id="@+id/cuisines"
         android:name="com.example.foood.SearchRecipes"
-        android:label="fragment_cuisines"
-        tools:layout="@layout/fragment_search_recipes" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_search_recipes">
         <action
             android:id="@+id/action_cuisines_to_recipeResultsFragment"
             app:destination="@id/recipeResultsFragment" />
@@ -16,6 +16,6 @@
     <fragment
         android:id="@+id/recipeResultsFragment"
         android:name="com.example.foood.RecipeResultsFragment"
-        android:label="fragment_recipe_results"
+        android:label="@string/results"
         tools:layout="@layout/fragment_recipe_results" />
 </navigation>

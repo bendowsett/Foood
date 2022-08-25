@@ -30,8 +30,10 @@ class RecipeResultsFragment : Fragment() {
         binding = FragmentRecipeResultsBinding.inflate(inflater, container, false)
 
         sharedViewModel.recipes.observe(viewLifecycleOwner) { newRecipes ->
-            binding.recipesResults.text = newRecipes
+            binding.recyclerView.adapter = RecipeResultAdapter(newRecipes.results)
         }
+
+
 
         return binding.root
     }
