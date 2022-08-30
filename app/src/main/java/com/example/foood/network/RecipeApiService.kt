@@ -7,6 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -23,6 +24,9 @@ private val retrofit = Retrofit.Builder()
 interface RecipeApiService {
     @GET("complexSearch")
     suspend fun getRecipes(@Query("query")query: String, @Query("apiKey")apiKey: String): NestedJSONModel
+
+    @GET("{id}/information")
+    suspend fun getRecipeDetails(@Path("id")id: String, @Query("apiKey")apiKey: String): Recipe
 }
 
 object RecipesApi {

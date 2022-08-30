@@ -7,8 +7,10 @@
         <entry key="app/src/main/res/layout/fragment_cuisine_list.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/fragment_cuisine_list_list.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/fragment_cuisines.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/fragment_recipe_detail.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/fragment_recipe_results.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search_recipes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/ingredient_details.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/recipe_item.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/layout/recipeitem.xml" value="0.2994791666666667" />
       </map>

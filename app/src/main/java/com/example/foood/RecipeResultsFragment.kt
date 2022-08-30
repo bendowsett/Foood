@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.foood.databinding.FragmentRecipeResultsBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,12 +31,17 @@ class RecipeResultsFragment : Fragment() {
         binding = FragmentRecipeResultsBinding.inflate(inflater, container, false)
 
         sharedViewModel.recipes.observe(viewLifecycleOwner) { newRecipes ->
-            binding.recyclerView.adapter = RecipeResultAdapter(newRecipes.results)
+            binding.recyclerView.adapter = RecipeResultAdapter(newRecipes.results, ::onClick)
         }
 
 
 
         return binding.root
+    }
+
+    fun onClick(id: String){
+        sharedViewModel.goToRecipeDetail(id)
+        findNavController().navigate(R.id.action_recipeResultsFragment_to_recipe_detail)
     }
 
 }

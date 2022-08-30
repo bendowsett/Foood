@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.foood.network.Recipes
 import kotlin.coroutines.coroutineContext
 
-class RecipeResultAdapter(private val dataset: List<Recipes>?) : RecyclerView.Adapter<RecipeResultAdapter.ItemViewHolder>(){
+class RecipeResultAdapter(private val dataset: List<Recipes>?, private val onClick: (id: String) -> Unit) : RecyclerView.Adapter<RecipeResultAdapter.ItemViewHolder>(){
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         var textView: TextView = view.findViewById(R.id.item_title)
@@ -33,6 +34,10 @@ class RecipeResultAdapter(private val dataset: List<Recipes>?) : RecyclerView.Ad
         holder.textView.text = recipe.title
         //holder.imageView.set
         holder.imageView.load(recipe.image)
+        holder.itemView.setOnClickListener {
+            onClick(recipe.id)
+
+        }
     }
 
     override fun getItemCount(): Int {

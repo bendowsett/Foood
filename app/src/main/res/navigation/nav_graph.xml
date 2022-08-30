@@ -17,5 +17,14 @@
         android:id="@+id/recipeResultsFragment"
         android:name="com.example.foood.RecipeResultsFragment"
         android:label="@string/results"
-        tools:layout="@layout/fragment_recipe_results" />
+        tools:layout="@layout/fragment_recipe_results" >
+        <action
+            android:id="@+id/action_recipeResultsFragment_to_recipe_detail"
+            app:destination="@id/recipe_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipe_detail"
+        android:name="com.example.foood.Recipedetail"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" />
 </navigation>
