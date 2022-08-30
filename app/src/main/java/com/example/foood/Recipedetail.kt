@@ -25,6 +25,7 @@ class Recipedetail : Fragment() {
 
         sharedViewModel.singleRecipe.observe(viewLifecycleOwner) {recipe ->
             binding.textView.text = recipe.title
+            binding.recipeDetailRecyclerView.adapter = RecipeDetailAdapter(recipe.extendedIngredients)
             binding.recipeImage.load(recipe.image)
         }
 

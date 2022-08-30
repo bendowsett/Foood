@@ -33,7 +33,9 @@ class RecipeResultAdapter(private val dataset: List<Recipes>?, private val onCli
         val recipe = dataset!![position]
         holder.textView.text = recipe.title
         //holder.imageView.set
-        holder.imageView.load(recipe.image)
+        holder.imageView.load(recipe.image){
+            placeholder(R.drawable.loading_img)
+        }
         holder.itemView.setOnClickListener {
             onClick(recipe.id)
 

@@ -34,8 +34,6 @@ class RecipeResultsFragment : Fragment() {
             binding.recyclerView.adapter = RecipeResultAdapter(newRecipes.results, ::onClick)
         }
 
-
-
         return binding.root
     }
 
