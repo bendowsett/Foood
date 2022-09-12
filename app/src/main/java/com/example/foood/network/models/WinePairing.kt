@@ -1,4 +1,6 @@
-package com.example.foood.network
+package com.example.foood.network.models
+
+import com.example.foood.network.models.ProductMatche
 
 data class WinePairing(
     val pairedWines: List<String>?,

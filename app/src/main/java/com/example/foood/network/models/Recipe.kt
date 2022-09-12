@@ -1,4 +1,7 @@
-package com.example.foood.network
+package com.example.foood.network.models
+
+import com.example.foood.network.models.AnalyzedInstruction
+import com.example.foood.network.models.ExtendedIngredient
 
 data class Recipe(
     val aggregateLikes: Int?,

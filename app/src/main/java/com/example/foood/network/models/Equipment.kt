@@ -1,4 +1,4 @@
-package com.example.foood.network
+package com.example.foood.network.models
 
 data class Equipment(
     val id: Int?,

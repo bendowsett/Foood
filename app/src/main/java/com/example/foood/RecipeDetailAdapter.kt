@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foood.databinding.IngredientDetailsBinding
-import com.example.foood.network.ExtendedIngredient
+import com.example.foood.network.models.ExtendedIngredient
 
 class RecipeDetailAdapter (private val ingredient: List<ExtendedIngredient>?) : RecyclerView.Adapter<RecipeDetailAdapter.ViewHolder>(){
 

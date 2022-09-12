@@ -1,6 +1,6 @@
-package com.example.foood.network
+package com.example.foood.network.models
 
-data class Metric(
+data class Us(
     val amount: Double?,
     val unitLong: String?,
     val unitShort: String?

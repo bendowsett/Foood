@@ -20,7 +20,11 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class RecipeResultsFragment : Fragment() {
-    private val sharedViewModel: RecipesViewModel by activityViewModels()
+    private val sharedViewModel: RecipesViewModel by activityViewModels{
+       RecipeViewModelFactory(
+           (activity?.application as FooodApplication).database.favoriteDao())
+
+    }
     lateinit var binding: FragmentRecipeResultsBinding
 
     override fun onCreateView(
@@ -32,6 +36,7 @@ class RecipeResultsFragment : Fragment() {
 
         sharedViewModel.recipes.observe(viewLifecycleOwner) { newRecipes ->
             binding.recyclerView.adapter = RecipeResultAdapter(newRecipes.results, ::onClick)
+
         }
 
         return binding.root

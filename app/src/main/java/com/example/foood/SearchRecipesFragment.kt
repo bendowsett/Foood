@@ -22,7 +22,11 @@ private const val ARG_PARAM2 = "param2"
 class SearchRecipes : Fragment() {
     lateinit var binding : FragmentSearchRecipesBinding
 
-    private val sharedViewModel: RecipesViewModel by activityViewModels()
+    private val sharedViewModel: RecipesViewModel by activityViewModels{
+        RecipeViewModelFactory(
+            (activity?.application as FooodApplication).database.favoriteDao())
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
